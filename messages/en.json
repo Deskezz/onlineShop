@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "title": "TechHaven — Electronics Store",
+    "description": "Electronics demo store. Smartphones, tablets, laptops and accessories."
+  },
+  "common": {
+    "appName": "TechHaven",
+    "home": "Home",
+    "catalog": "Catalog",
+    "cart": "Cart",
+    "profile": "Profile",
+    "search": "Search",
+    "favorites": "Favorites",
+    "language": "Language",
+    "theme": "Theme",
+    "lightTheme": "Light",
+    "darkTheme": "Dark",
+    "currency": "$",
+    "addToCart": "Add to Cart",
+    "addToFavorites": "Add to Favorites",
+    "removeFromFavorites": "Remove from Favorites",
+    "buyNow": "Buy Now",
+    "viewAll": "View All",
+    "back": "Back",
+    "close": "Close",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "error": "Error",
+    "demo": "This is a demo store",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock"
+  },
+  "hero": {
+    "title": "Future Technology",
+    "subtitle": "Discover the world of innovation",
+    "cta": "Browse Catalog"
+  },
+  "categories": {
+    "title": "Categories",
+    "smartphones": "Smartphones",
+    "tablets": "Tablets",
+    "laptops": "Laptops",
+    "watches": "Smartwatches",
+    "accessories": "Accessories",
+    "desktops": "Desktops"
+  },
+  "featured": {
+    "title": "Featured Products",
+    "subtitle": "Best deals of the week"
+  },
+  "promo": {
+    "title": "10% Off with Promo Code",
+    "code": "DEMO",
+    "description": "Use promo code at checkout"
+  },
+  "product": {
+    "specifications": "Specifications",
+    "reviews": "Reviews",
+    "relatedProducts": "Related Products",
+    "quantity": "Quantity",
+    "color": "Color",
+    "storage": "Storage",
+    "writeReview": "Write a Review",
+    "verifiedPurchase": "Verified Purchase",
+    "rating": "Rating"
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty",
+    "emptyDescription": "Add items from the catalog",
+    "continueShopping": "Continue Shopping",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "total": "Total",
+    "promoCode": "Promo Code",
+    "applyPromo": "Apply",
+    "promoApplied": "Promo code applied",
+    "promoInvalid": "Invalid promo code",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "itemAdded": "Item added to cart"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "step1": "Shipping",
+    "step2": "Payment",
+    "step3": "Confirmation",
+    "fullName": "Full Name",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "city": "City",
+    "zipCode": "ZIP Code",
+    "country": "Country",
+    "cardNumber": "Card Number",
+    "cardHolder": "Cardholder Name",
+    "expiryDate": "Expiry",
+    "cvv": "CVV",
+    "cashOnDelivery": "Cash on Delivery",
+    "payByCard": "Pay by Card",
+    "next": "Next",
+    "prev": "Back",
+    "placeOrder": "Place Order",
+    "demoNotice": "This is a demo — no real payment will be processed"
+  },
+  "orderSuccess": {
+    "title": "Order Placed!",
+    "orderNumber": "Order Number",
+    "description": "Thank you for your purchase! Your order is being processed.",
+    "viewOrders": "My Orders",
+    "backToShop": "Back to Store"
+  },
+  "profile": {
+    "title": "Profile",
+    "overview": "Overview",
+    "orders": "Orders",
+    "orderDetails": "Order Details",
+    "memberSince": "Member Since",
+    "totalOrders": "Total Orders",
+    "totalSpent": "Total Spent",
+    "noOrders": "No orders yet",
+    "noFavorites": "No favorite items yet",
+    "orderStatus": {
+      "processing": "Processing",
+      "confirmed": "Confirmed",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    }
+  },
+  "search": {
+    "placeholder": "Search products...",
+    "hint": "Press Cmd+K to search",
+    "noResults": "No results found for your query",
+    "recentSearches": "Recent Searches"
+  },
+  "filters": {
+    "title": "Filters",
+    "category": "Category",
+    "brand": "Brand",
+    "price": "Price",
+    "rating": "Rating",
+    "clear": "Clear",
+    "apply": "Apply",
+    "sort": "Sort",
+    "sortOptions": {
+      "featured": "Featured",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "rating": "Top Rated",
+      "newest": "Newest"
+    },
+    "showing": "Showing {count} of {total}"
+  },
+  "footer": {
+    "about": "About",
+    "aboutText": "TechHaven is a demo electronics store built as a portfolio project. All data is fictional.",
+    "links": "Links",
+    "support": "Support",
+    "contact": "Contact",
+    "copyright": "© 2026 TechHaven. Demo project."
+  },
+  "badges": {
+    "new": "New",
+    "sale": "Sale",
+    "bestseller": "Bestseller",
+    "limited": "Limited"
+  }
+}

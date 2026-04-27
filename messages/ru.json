@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "title": "TechHaven — Магазин электроники",
+    "description": "Демо-магазин электроники. Смартфоны, планшеты, ноутбуки и аксессуары."
+  },
+  "common": {
+    "appName": "TechHaven",
+    "home": "Главная",
+    "catalog": "Каталог",
+    "cart": "Корзина",
+    "profile": "Профиль",
+    "search": "Поиск",
+    "favorites": "Избранное",
+    "language": "Язык",
+    "theme": "Тема",
+    "lightTheme": "Светлая",
+    "darkTheme": "Тёмная",
+    "currency": "₽",
+    "addToCart": "В корзину",
+    "addToFavorites": "В избранное",
+    "removeFromFavorites": "Убрать из избранного",
+    "buyNow": "Купить сейчас",
+    "viewAll": "Смотреть все",
+    "back": "Назад",
+    "close": "Закрыть",
+    "loading": "Загрузка...",
+    "noResults": "Ничего не найдено",
+    "error": "Ошибка",
+    "demo": "Это демо-версия магазина",
+    "inStock": "В наличии",
+    "outOfStock": "Нет в наличии"
+  },
+  "hero": {
+    "title": "Технологии будущего",
+    "subtitle": "Откройте для себя мир инноваций",
+    "cta": "Перейти в каталог"
+  },
+  "categories": {
+    "title": "Категории",
+    "smartphones": "Смартфоны",
+    "tablets": "Планшеты",
+    "laptops": "Ноутбуки",
+    "watches": "Смарт-часы",
+    "accessories": "Аксессуары",
+    "desktops": "Настольные ПК"
+  },
+  "featured": {
+    "title": "Популярные товары",
+    "subtitle": "Лучшие предложения этой недели"
+  },
+  "promo": {
+    "title": "Скидка 10% по промокоду",
+    "code": "DEMO",
+    "description": "Используйте промокод при оформлении заказа"
+  },
+  "product": {
+    "specifications": "Характеристики",
+    "reviews": "Отзывы",
+    "relatedProducts": "Похожие товары",
+    "quantity": "Количество",
+    "color": "Цвет",
+    "storage": "Память",
+    "writeReview": "Написать отзыв",
+    "verifiedPurchase": "Проверенная покупка",
+    "rating": "Рейтинг"
+  },
+  "cart": {
+    "title": "Корзина",
+    "empty": "Ваша корзина пуста",
+    "emptyDescription": "Добавьте товары из каталога",
+    "continueShopping": "Продолжить покупки",
+    "subtotal": "Подитог",
+    "discount": "Скидка",
+    "total": "Итого",
+    "promoCode": "Промокод",
+    "applyPromo": "Применить",
+    "promoApplied": "Промокод применён",
+    "promoInvalid": "Неверный промокод",
+    "checkout": "Оформить заказ",
+    "remove": "Удалить",
+    "itemAdded": "Товар добавлен в корзину"
+  },
+  "checkout": {
+    "title": "Оформление заказа",
+    "step1": "Доставка",
+    "step2": "Оплата",
+    "step3": "Подтверждение",
+    "fullName": "Полное имя",
+    "phone": "Телефон",
+    "email": "Email",
+    "address": "Адрес",
+    "city": "Город",
+    "zipCode": "Индекс",
+    "country": "Страна",
+    "cardNumber": "Номер карты",
+    "cardHolder": "Имя держателя",
+    "expiryDate": "Срок",
+    "cvv": "CVV",
+    "cashOnDelivery": "Оплата при получении",
+    "payByCard": "Картой",
+    "next": "Далее",
+    "prev": "Назад",
+    "placeOrder": "Оформить заказ",
+    "demoNotice": "Это демо — реальная оплата не производится"
+  },
+  "orderSuccess": {
+    "title": "Заказ оформлен!",
+    "orderNumber": "Номер заказа",
+    "description": "Спасибо за покупку! Ваш заказ обрабатывается.",
+    "viewOrders": "Мои заказы",
+    "backToShop": "Вернуться в магазин"
+  },
+  "profile": {
+    "title": "Профиль",
+    "overview": "Обзор",
+    "orders": "Заказы",
+    "orderDetails": "Детали заказа",
+    "memberSince": "Участник с",
+    "totalOrders": "Всего заказов",
+    "totalSpent": "Потрачено",
+    "noOrders": "Заказов пока нет",
+    "noFavorites": "Избранных товаров пока нет",
+    "orderStatus": {
+      "processing": "Обрабатывается",
+      "confirmed": "Подтверждён",
+      "shipped": "Отправлен",
+      "delivered": "Доставлен",
+      "cancelled": "Отменён"
+    }
+  },
+  "search": {
+    "placeholder": "Поиск товаров...",
+    "hint": "Нажмите Cmd+K для поиска",
+    "noResults": "По вашему запросу ничего не найдено",
+    "recentSearches": "Недавние запросы"
+  },
+  "filters": {
+    "title": "Фильтры",
+    "category": "Категория",
+    "brand": "Бренд",
+    "price": "Цена",
+    "rating": "Рейтинг",
+    "clear": "Сбросить",
+    "apply": "Применить",
+    "sort": "Сортировка",
+    "sortOptions": {
+      "featured": "Рекомендуемые",
+      "priceAsc": "Цена: по возрастанию",
+      "priceDesc": "Цена: по убыванию",
+      "rating": "По рейтингу",
+      "newest": "Новинки"
+    },
+    "showing": "Показано {count} из {total}"
+  },
+  "footer": {
+    "about": "О магазине",
+    "aboutText": "TechHaven — демо-магазин электроники для портфолио. Все данные вымышлены.",
+    "links": "Ссылки",
+    "support": "Поддержка",
+    "contact": "Контакты",
+    "copyright": "© 2026 TechHaven. Демо-проект."
+  },
+  "badges": {
+    "new": "Новинка",
+    "sale": "Скидка",
+    "bestseller": "Хит",
+    "limited": "Лимитированный"
+  }
+}
