@@ -3,21 +3,13 @@
 /* ===== Design Tokens: Soft Obsidian ===== */
 
 @theme inline {
-  /* Light palette */
-  --color-bg-primary: #F8F9FA;
-  --color-bg-secondary: #FFFFFF;
-  --color-text-primary: #1A1C1E;
-  --color-text-secondary: #64748B;
-  --color-accent: #0F172A;
-  --color-border: #EDF2F7;
-
-  /* Dark palette (used via .dark class) */
-  --color-dark-bg-primary: #0F1115;
-  --color-dark-bg-secondary: #1C1F26;
-  --color-dark-text-primary: #F1F5F9;
-  --color-dark-text-secondary: #94A3B8;
-  --color-dark-accent: #F1F5F9;
-  --color-dark-border: #2D333D;
+  /* Map Tailwind colors to dynamic CSS variables */
+  --color-background: var(--bg);
+  --color-background-secondary: var(--bg-secondary);
+  --color-foreground: var(--fg);
+  --color-foreground-secondary: var(--fg-secondary);
+  --color-accent: var(--accent);
+  --color-border-color: var(--border);
 
   /* Shared tokens */
   --color-success: #10B981;
@@ -40,12 +32,13 @@
 
 /* ===== Light theme (default) ===== */
 :root {
-  --background: var(--color-bg-primary);
-  --background-secondary: var(--color-bg-secondary);
-  --foreground: var(--color-text-primary);
-  --foreground-secondary: var(--color-text-secondary);
-  --accent: var(--color-accent);
-  --border-color: var(--color-border);
+  --bg: #F8F9FA;
+  --bg-secondary: #FFFFFF;
+  --fg: #1A1C1E;
+  --fg-secondary: #64748B;
+  --accent: #0F172A;
+  --border: #EDF2F7;
+  
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -53,12 +46,13 @@
 
 /* ===== Dark theme ===== */
 .dark {
-  --background: var(--color-dark-bg-primary);
-  --background-secondary: var(--color-dark-bg-secondary);
-  --foreground: var(--color-dark-text-primary);
-  --foreground-secondary: var(--color-dark-text-secondary);
-  --accent: var(--color-dark-accent);
-  --border-color: var(--color-dark-border);
+  --bg: #0F1115;
+  --bg-secondary: #1C1F26;
+  --fg: #F1F5F9;
+  --fg-secondary: #94A3B8;
+  --accent: #F1F5F9;
+  --border: #2D333D;
+  
   --shadow: none;
   --shadow-md: none;
   --shadow-lg: none;
@@ -66,8 +60,8 @@
 
 /* ===== Base Styles ===== */
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   line-height: 1.7;
   transition: background-color var(--transition-base), color var(--transition-base);
@@ -81,12 +75,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.2;
-  color: var(--foreground);
+  color: var(--color-foreground);
 }
 
 /* ===== Focus visible ===== */
 *:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -102,16 +96,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--foreground-secondary);
+  background: var(--color-foreground-secondary);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--foreground);
+  background: var(--color-foreground);
 }
 
 /* ===== Selection ===== */
 ::selection {
-  background-color: var(--accent);
-  color: var(--background);
+  background-color: var(--color-accent);
+  color: var(--color-background);
 }

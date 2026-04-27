@@ -19,8 +19,30 @@
 - [x] Создана заглушка `src/app/[locale]/page.tsx`.
 - [x] Проверка `npm run build`.
 
+## ЭТАП 2: Дизайн-система (Завершён)
+- [x] Создан `Button` (cva: default, secondary, outline, ghost, link).
+- [x] Создан `Badge` (варианты: new, sale, bestseller, limited, outline).
+- [x] Создан `Input` (c поддержкой start/end иконок и состоянием error).
+- [x] Создан `Card` и его составные части (Header, Title, Description, Content, Footer).
+- [x] Создан `Skeleton` для fallbacks.
+- [x] Создан `Rating` компонент на базе `lucide-react` (с половинками звёзд).
+- [x] Реализована кастомная `Toast` система через Context и Framer Motion.
+- [x] Создан barrel файл `src/components/ui/index.ts`.
+- [x] `ToastProvider` добавлен в корневой layout.
+- [x] Проверка сборки `npm run build` прошла успешно.
+
+## ЭТАП 3: Layout (Завершён)
+- [x] Создан `DemoBanner` (уведомление "Это демо-версия магазина").
+- [x] Созданы переключатели `ThemeToggle` и `LanguageToggle`.
+- [x] Создан `MobileMenu` (гамбургер-меню с анимацией Framer Motion и блокировкой скролла).
+- [x] Создан `Header` (лого, навигация, кнопки поиска/корзины/профиля) с эффектом скрытия при скролле вниз.
+- [x] Создан `Footer` с основными ссылками магазина и соцсетями.
+- [x] Создан `Breadcrumbs` для динамической навигации.
+- [x] `layout.tsx` обновлен: `DemoBanner`, `Header` и `Footer` добавлены в DOM.
+- [x] Проверка сборки `npm run build` прошла успешно.
+
 ## Текущий статус
-Ожидаем завершения сборки `npm run build` для подтверждения целостности фундамента.
+Ожидаем подтверждения пользователя для перехода к Этапу 4.
 
 ## Следующий шаг
-ЭТАП 2: Дизайн-система. UI-компоненты через `cva`, скелетоны, тосты, рейтинг.
+ЭТАП 4: Главная страница. Hero секция, Categories Grid, Featured Products, Promo секция.

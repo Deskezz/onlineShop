@@ -6,6 +6,10 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { LOCALES } from '@/lib/constants';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { ToastProvider } from '@/components/ui';
+import { DemoBanner } from '@/components/layout/DemoBanner';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 import '../globals.css';
 
 const inter = Inter({
@@ -51,7 +55,14 @@ export default async function RootLayout({
       <body className="antialiased min-h-screen flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
-            {children}
+            <ToastProvider>
+              <DemoBanner />
+              <Header />
+              <main className="flex-grow flex flex-col">
+                {children}
+              </main>
+              <Footer />
+            </ToastProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
