@@ -72,6 +72,7 @@ export interface CartItem {
 
 export interface FavoriteItem {
   productId: string;
+  variantKey?: string;
 }
 
 export type OrderStatus =

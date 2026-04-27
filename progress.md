@@ -41,8 +41,23 @@
 - [x] `layout.tsx` обновлен: `DemoBanner`, `Header` и `Footer` добавлены в DOM.
 - [x] Проверка сборки `npm run build` прошла успешно.
 
+## ЭТАП 4: Данные и стейт (Завершён)
+- [x] Добавлены нормализованные моки товаров: `src/data/products.ts`.
+- [x] Добавлены спецификации товаров: `src/data/product-specs.ts`.
+- [x] Добавлены отзывы товаров: `src/data/product-reviews.ts`.
+- [x] Добавлены предзаполненные демо-заказы: `src/data/orders.ts`.
+- [x] Добавлен демо-пользователь: `src/data/demo-user.ts`.
+- [x] Добавлены barrel-экспорты данных: `src/data/index.ts`.
+- [x] Создан `cartStore` с `persist` и лимитами количества/позиций.
+- [x] Создан `favoritesStore` с нормализованным хранением (`productId`, `variantKey`).
+- [x] Создан `ordersStore` с `persist` и merge логикой статических заказов + сохранённых в localStorage.
+- [x] Создан `langStore` с `persist`.
+- [x] Добавлен barrel-экспорт сторов: `src/stores/index.ts`.
+- [x] Обновлены типы избранного: `FavoriteItem` теперь поддерживает `variantKey`.
+- [x] Проверка сборки `npm run build` прошла успешно.
+
 ## Текущий статус
-Ожидаем подтверждения пользователя для перехода к Этапу 4.
+Этап 4 завершён. Ожидаем подтверждения пользователя для перехода к Этапу 5.
 
 ## Следующий шаг
-ЭТАП 4: Главная страница. Hero секция, Categories Grid, Featured Products, Promo секция.
+ЭТАП 5: Главная страница. Hero секция, Categories Grid, Featured Products, Promo секция.
