@@ -9,7 +9,7 @@ export const categories: Category[] = [
       en: 'Flagship and value smartphones for daily use.',
     },
     image: '/assets/products/IPhone-17-Pro.jpg',
-    productCount: 3,
+    productCount: 12,
   },
   {
     slug: 'tablets',
@@ -19,7 +19,7 @@ export const categories: Category[] = [
       en: 'Devices for creativity, work, and entertainment.',
     },
     image: '/assets/products/ipad-pro.png',
-    productCount: 2,
+    productCount: 5,
   },
   {
     slug: 'laptops',
@@ -39,7 +39,7 @@ export const categories: Category[] = [
       en: 'Smartwatches for fitness, wellness, and notifications.',
     },
     image: '/assets/products/apple-watch-ultra-3.png',
-    productCount: 1,
+    productCount: 2,
   },
   {
     slug: 'accessories',
@@ -49,7 +49,7 @@ export const categories: Category[] = [
       en: 'Keyboards, chargers, and essential add-ons.',
     },
     image: '/assets/products/cuktech-140w-gan-charger-4-ports.jpg',
-    productCount: 2,
+    productCount: 8,
   },
   {
     slug: 'desktops',
@@ -59,6 +59,6 @@ export const categories: Category[] = [
       en: 'Compact and powerful desktop solutions.',
     },
     image: '/assets/products/mac-mini.jpg',
-    productCount: 1,
+    productCount: 2,
   },
 ];

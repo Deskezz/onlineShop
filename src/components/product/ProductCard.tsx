@@ -21,7 +21,7 @@ export function ProductCard({ product, locale, labels, badgeLabels }: ProductCar
   const productName = product.name[locale];
 
   return (
-    <Card className="group h-full border-border-color bg-background-secondary">
+    <Card className="group h-full min-w-0 border-border-color bg-background-secondary">
       <Link href="/catalog" className="block focus-visible:outline-none">
         <div className="relative aspect-[4/3] overflow-hidden bg-background">
           <Image
@@ -39,9 +39,9 @@ export function ProductCard({ product, locale, labels, badgeLabels }: ProductCar
         </div>
       </Link>
 
-      <CardContent className="flex flex-1 flex-col gap-4 p-5 pt-5">
+      <CardContent className="flex min-w-0 flex-1 flex-col gap-4 p-5 pt-5">
         <div className="space-y-2">
-          <h3 className="line-clamp-2 text-lg font-semibold tracking-tight">{productName}</h3>
+          <h3 className="line-clamp-2 break-words text-lg font-semibold tracking-tight">{productName}</h3>
           <Rating value={product.rating} showCount count={product.reviewCount} />
         </div>
 

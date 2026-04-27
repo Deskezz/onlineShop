@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { Button } from '@/components/ui';
+import { cn } from '@/lib/utils';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
 import { useScrollLock } from '@/hooks/useScrollLock';
@@ -31,9 +32,9 @@ export function MobileMenu() {
   return (
     <>
       <Button
-        variant="ghost"
+        variant="outline"
         size="icon"
-        className="md:hidden w-10 h-10"
+        className="h-10 w-10 rounded-full border-border-color bg-background-secondary md:hidden"
         onClick={() => setIsOpen(true)}
         aria-label="Open menu"
       >
@@ -48,7 +49,7 @@ export function MobileMenu() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
               onClick={() => setIsOpen(false)}
             />
             <motion.div
@@ -56,7 +57,7 @@ export function MobileMenu() {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 left-0 z-50 w-3/4 max-w-sm bg-background border-r border-border-color shadow-xl md:hidden flex flex-col"
+              className="fixed left-0 top-0 z-50 flex h-dvh w-[82vw] max-w-[320px] flex-col border-r border-border-color bg-background-secondary shadow-xl md:hidden"
             >
               <div className="flex items-center justify-between p-4 border-b border-border-color">
                 <span className="font-heading font-bold text-xl tracking-tight">
@@ -72,18 +73,21 @@ export function MobileMenu() {
                 </Button>
               </div>
 
-              <div className="flex-1 overflow-y-auto py-4 px-4 flex flex-col gap-2">
+              <div className="flex flex-1 flex-col gap-2 overflow-y-auto px-4 py-4">
                 {NAV_LINKS.map((link) => {
-                  const isActive = pathname === link.href;
+                  const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
                   return (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`block px-4 py-3 rounded-md text-lg font-medium transition-colors ${
-                        isActive
-                          ? 'bg-background-secondary text-foreground'
-                          : 'text-foreground-secondary hover:bg-background-secondary hover:text-foreground'
-                      }`}
+                      className={cn(
+                        'block rounded-[var(--radius-button)] border px-4 py-3 text-base font-medium transition-colors',
+                        {
+                          'border-foreground/20 bg-background text-foreground': isActive,
+                          'border-transparent bg-transparent text-foreground hover:border-border-color hover:bg-background hover:text-foreground':
+                            !isActive,
+                        }
+                      )}
                     >
                       {t(link.labelKey)}
                     </Link>
@@ -91,7 +95,7 @@ export function MobileMenu() {
                 })}
               </div>
 
-              <div className="p-4 border-t border-border-color flex items-center justify-between gap-4">
+              <div className="flex items-center justify-between gap-4 border-t border-border-color p-4">
                 <div className="flex gap-2">
                   <ThemeToggle />
                   <LanguageToggle />
