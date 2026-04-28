@@ -22,7 +22,7 @@ export function ProductCard({ product, locale, labels, badgeLabels }: ProductCar
 
   return (
     <Card className="group h-full min-w-0 border-border-color bg-background-secondary">
-      <Link href="/catalog" className="block focus-visible:outline-none">
+      <Link href={`/product/${product.slug}`} className="block focus-visible:outline-none">
         <div className="relative aspect-[4/3] overflow-hidden bg-background">
           <Image
             src={product.images[0]}
@@ -56,7 +56,7 @@ export function ProductCard({ product, locale, labels, badgeLabels }: ProductCar
             {product.inStock ? labels.inStock : labels.outOfStock}
           </p>
 
-          <Link href="/catalog" className="block">
+          <Link href={`/product/${product.slug}`} className="block">
             <Button className="w-full">{labels.buyNow}</Button>
           </Link>
         </div>
