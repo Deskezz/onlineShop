@@ -34,6 +34,8 @@ export interface CatalogLabels {
     inStock: string;
     outOfStock: string;
     addToCart: string;
+    addToFavorites: string;
+    removeFromFavorites: string;
   };
 }
 

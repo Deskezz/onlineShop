@@ -13,6 +13,8 @@ interface FeaturedProductsProps {
     inStock: string;
     outOfStock: string;
     addToCart: string;
+    addToFavorites: string;
+    removeFromFavorites: string;
   };
   badgeLabels: Record<BadgeType, string>;
 }

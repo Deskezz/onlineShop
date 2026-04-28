@@ -84,6 +84,8 @@ export default async function ProductPage({
           inStock: tCommon('inStock'),
           outOfStock: tCommon('outOfStock'),
           addToCart: tCommon('addToCart'),
+          addToFavorites: tCommon('addToFavorites'),
+          removeFromFavorites: tCommon('removeFromFavorites'),
         }}
         badgeLabels={badgeLabels}
       />

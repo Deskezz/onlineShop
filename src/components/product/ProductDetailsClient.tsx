@@ -59,9 +59,7 @@ export function ProductDetailsClient({ product, locale, labels }: ProductDetails
   }
 
   const isFavorite = favoriteItems.some(
-    (item) =>
-      item.productId === product.id &&
-      item.variantKey === buildVariantKey(selectedByType, variants[0]?.key)
+    (item) => item.productId === product.id
   );
 
   return (
@@ -113,12 +111,7 @@ export function ProductDetailsClient({ product, locale, labels }: ProductDetails
         <Button
           variant="outline"
           aria-label={isFavorite ? labels.removeFromFavorites : labels.addToFavorites}
-          onClick={() =>
-            toggleFavorite(
-              product.id,
-              buildVariantKey(selectedByType, variants[0]?.key)
-            )
-          }
+          onClick={() => toggleFavorite(product.id)}
         >
           <Heart className={cn('mr-2 h-4 w-4', { 'fill-current': isFavorite })} />
           {isFavorite ? labels.removeFromFavorites : labels.addToFavorites}

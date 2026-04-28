@@ -81,6 +81,8 @@ export default async function CatalogPage({
           inStock: tCommon('inStock'),
           outOfStock: tCommon('outOfStock'),
           addToCart: tCommon('addToCart'),
+          addToFavorites: tCommon('addToFavorites'),
+          removeFromFavorites: tCommon('removeFromFavorites'),
         },
       }}
     />

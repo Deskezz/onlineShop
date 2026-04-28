@@ -15,9 +15,9 @@ interface FavoritesState {
 function isSameFavorite(
   item: FavoriteItem,
   productId: string,
-  variantKey: string | undefined
+  _variantKey: string | undefined
 ): boolean {
-  return item.productId === productId && item.variantKey === variantKey;
+  return item.productId === productId;
 }
 
 export const useFavoritesStore = create<FavoritesState>()(
