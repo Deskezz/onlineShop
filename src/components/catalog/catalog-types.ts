@@ -33,7 +33,7 @@ export interface CatalogLabels {
   product: {
     inStock: string;
     outOfStock: string;
-    buyNow: string;
+    addToCart: string;
   };
 }
 

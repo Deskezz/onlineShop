@@ -4,6 +4,8 @@ import * as React from 'react';
 import { Search, ShoppingBag, User } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
+import { useHydratedStore } from '@/hooks/useHydratedStore';
+import { useCartStore } from '@/stores';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui';
 import { ThemeToggle } from './ThemeToggle';
@@ -17,8 +19,10 @@ const NAV_LINKS = [
 export function Header() {
   const t = useTranslations('common');
   const pathname = usePathname();
+  const cartItems = useHydratedStore(useCartStore, (state) => state.items);
   const [isVisible, setIsVisible] = React.useState(true);
   const [lastScrollY, setLastScrollY] = React.useState(0);
+  const cartCount = (cartItems ?? []).reduce((sum, item) => sum + item.quantity, 0);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -93,8 +97,11 @@ export function Header() {
           <Link href="/cart" tabIndex={-1}>
             <Button variant="ghost" size="icon" aria-label={t('cart')} className="relative rounded-full">
               <ShoppingBag className="h-5 w-5" />
-              {/* Badge placeholder - will be connected to store later */}
-              <span className="absolute top-1.5 right-1.5 flex h-2 w-2 rounded-full bg-accent"></span>
+              {cartCount > 0 ? (
+                <span className="absolute -right-1 -top-1 flex min-h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1 text-[10px] font-semibold text-background">
+                  {cartCount > 99 ? '99+' : cartCount}
+                </span>
+              ) : null}
             </Button>
           </Link>
         </div>

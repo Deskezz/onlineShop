@@ -76,6 +76,9 @@
     "applyPromo": "Apply",
     "promoApplied": "Promo code applied",
     "promoInvalid": "Invalid promo code",
+    "promoActive": "Promo code \"{code}\" applied",
+    "promoRemove": "Remove",
+    "promoReplace": "Active promo code will be replaced",
     "checkout": "Checkout",
     "remove": "Remove",
     "itemAdded": "Item added to cart"

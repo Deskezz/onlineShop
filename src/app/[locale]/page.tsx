@@ -62,7 +62,7 @@ export default async function HomePage({
         labels={{
           inStock: tCommon('inStock'),
           outOfStock: tCommon('outOfStock'),
-          buyNow: tCommon('buyNow'),
+          addToCart: tCommon('addToCart'),
         }}
         badgeLabels={badgeLabels}
       />

@@ -1,0 +1,1 @@
+export { CartPageClient } from './CartPageClient';

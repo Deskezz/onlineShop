@@ -76,6 +76,9 @@
     "applyPromo": "Применить",
     "promoApplied": "Промокод применён",
     "promoInvalid": "Неверный промокод",
+    "promoActive": "Применён промокод \"{code}\"",
+    "promoRemove": "Убрать",
+    "promoReplace": "Активный промокод будет заменён новым",
     "checkout": "Оформить заказ",
     "remove": "Удалить",
     "itemAdded": "Товар добавлен в корзину"

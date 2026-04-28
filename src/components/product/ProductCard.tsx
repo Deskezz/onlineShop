@@ -1,5 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
+import { useHydratedStore } from '@/hooks/useHydratedStore';
+import { useCartStore } from '@/stores';
 import { cn, formatPrice } from '@/lib/utils';
 import type { Badge as BadgeType, Locale, Product } from '@/lib/types';
 import { Badge, Button, Card, CardContent, Rating } from '@/components/ui';
@@ -10,15 +14,25 @@ interface ProductCardProps {
   labels: {
     inStock: string;
     outOfStock: string;
-    buyNow: string;
+    addToCart: string;
   };
   badgeLabels: Record<BadgeType, string>;
 }
 
 export function ProductCard({ product, locale, labels, badgeLabels }: ProductCardProps) {
+  const items = useHydratedStore(useCartStore, (state) => state.items);
+  const addItem = useHydratedStore(useCartStore, (state) => state.addItem);
+  const updateItemQuantity = useHydratedStore(
+    useCartStore,
+    (state) => state.updateItemQuantity
+  );
   const primaryBadge = product.badges?.[0];
   const price = formatPrice(product.price, locale);
   const productName = product.name[locale];
+  const cardItem = (items ?? []).find(
+    (item) => item.productId === product.id && !item.variantKey
+  );
+  const quantity = cardItem?.quantity ?? 0;
 
   return (
     <Card className="group h-full min-w-0 border-border-color bg-background-secondary">
@@ -56,11 +70,56 @@ export function ProductCard({ product, locale, labels, badgeLabels }: ProductCar
             {product.inStock ? labels.inStock : labels.outOfStock}
           </p>
 
-          <Link href={`/product/${product.slug}`} className="block">
-            <Button className="w-full">{labels.buyNow}</Button>
-          </Link>
+          {quantity > 0 && updateItemQuantity ? (
+            <div className="flex items-center justify-center gap-2 rounded-[var(--radius-button)] border border-border-color p-1">
+              <ControlButton
+                onClick={() =>
+                  updateItemQuantity(product.id, undefined, Math.max(0, quantity - 1))
+                }
+                ariaLabel="Decrease quantity"
+              >
+                -
+              </ControlButton>
+              <span className="w-8 text-center font-medium">{quantity}</span>
+              <ControlButton
+                onClick={() => updateItemQuantity(product.id, undefined, quantity + 1)}
+                ariaLabel="Increase quantity"
+              >
+                +
+              </ControlButton>
+            </div>
+          ) : (
+            <Button
+              className="w-full"
+              onClick={() => addItem?.({ productId: product.id, quantity: 1 })}
+              disabled={!product.inStock}
+            >
+              {labels.addToCart}
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>
+  );
+}
+
+function ControlButton({
+  children,
+  onClick,
+  ariaLabel,
+}: {
+  children: string;
+  onClick: () => void;
+  ariaLabel: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={ariaLabel}
+      className="rounded-[var(--radius-button)] px-3 py-2 text-sm transition-colors hover:bg-background"
+    >
+      {children}
+    </button>
   );
 }

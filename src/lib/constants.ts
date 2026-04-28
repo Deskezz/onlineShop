@@ -5,6 +5,7 @@ export const DEFAULT_LOCALE: Locale = 'ru';
 
 export const PROMO_CODES: Record<string, number> = {
   DEMO: 0.1,
+  SAVE25: 0.25,
 };
 
 export const CART_LIMITS = {

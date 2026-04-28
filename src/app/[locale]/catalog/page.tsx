@@ -80,7 +80,7 @@ export default async function CatalogPage({
         product: {
           inStock: tCommon('inStock'),
           outOfStock: tCommon('outOfStock'),
-          buyNow: tCommon('buyNow'),
+          addToCart: tCommon('addToCart'),
         },
       }}
     />

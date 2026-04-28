@@ -12,7 +12,7 @@ interface FeaturedProductsProps {
   labels: {
     inStock: string;
     outOfStock: string;
-    buyNow: string;
+    addToCart: string;
   };
   badgeLabels: Record<BadgeType, string>;
 }
