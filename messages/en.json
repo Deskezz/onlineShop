@@ -104,6 +104,7 @@
     "next": "Next",
     "prev": "Back",
     "placeOrder": "Place Order",
+    "orderPlaced": "Order placed",
     "demoNotice": "This is a demo — no real payment will be processed"
   },
   "orderSuccess": {
