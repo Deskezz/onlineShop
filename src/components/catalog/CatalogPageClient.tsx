@@ -7,6 +7,7 @@ import { Button } from '@/components/ui';
 import { FilterSidebar } from './FilterSidebar';
 import { ActiveFilters } from './ActiveFilters';
 import { SortSelect } from './SortSelect';
+import { CurrencySelect } from './CurrencySelect';
 import { ProductsGrid } from './ProductsGrid';
 import { Pagination } from './Pagination';
 import { MobileFiltersDrawer } from './MobileFiltersDrawer';
@@ -71,6 +72,7 @@ export function CatalogPageClient({
             <SlidersHorizontal className="mr-2 h-4 w-4" />
             {labels.filters.title}
           </Button>
+          <CurrencySelect locale={locale} id="catalog-currency-mobile" />
           <SortSelect
             id="catalog-sort-mobile"
             value={state.sort}

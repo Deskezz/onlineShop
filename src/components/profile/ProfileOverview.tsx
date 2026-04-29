@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useDisplayCurrency } from '@/hooks/useDisplayCurrency';
 import { formatPrice } from '@/lib/utils';
 import type { DemoUser, Locale, Order } from '@/lib/types';
 
@@ -14,6 +17,7 @@ interface ProfileOverviewProps {
 }
 
 export function ProfileOverview({ locale, user, orders, labels }: ProfileOverviewProps) {
+  const { currency } = useDisplayCurrency(locale);
   const totalSpent = orders.reduce((sum, order) => sum + order.totalAmount, 0);
 
   return (
@@ -39,7 +43,7 @@ export function ProfileOverview({ locale, user, orders, labels }: ProfileOvervie
         </div>
         <div className="rounded-[var(--radius-button)] border border-border-color p-4">
           <p className="text-sm text-foreground-secondary">{labels.totalSpent}</p>
-          <p className="text-2xl font-semibold">{formatPrice(totalSpent, locale)}</p>
+          <p className="text-2xl font-semibold">{formatPrice(totalSpent, locale, currency)}</p>
         </div>
       </div>
     </section>

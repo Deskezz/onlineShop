@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Heart } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { useHydratedStore } from '@/hooks/useHydratedStore';
+import { useDisplayCurrency } from '@/hooks/useDisplayCurrency';
 import { useCartStore, useFavoritesStore } from '@/stores';
 import { cn, formatPrice } from '@/lib/utils';
 import type { Badge as BadgeType, Locale, Product } from '@/lib/types';
@@ -31,8 +32,9 @@ export function ProductCard({ product, locale, labels, badgeLabels }: ProductCar
   );
   const favorites = useHydratedStore(useFavoritesStore, (state) => state.items);
   const toggleFavorite = useHydratedStore(useFavoritesStore, (state) => state.toggleFavorite);
+  const { currency } = useDisplayCurrency(locale);
   const primaryBadge = product.badges?.[0];
-  const price = formatPrice(product.price, locale);
+  const price = formatPrice(product.price, locale, currency);
   const productName = product.name[locale];
   const cardItem = (items ?? []).find(
     (item) => item.productId === product.id && !item.variantKey

@@ -1,5 +1,8 @@
+ 'use client';
+
 import { Link } from '@/i18n/navigation';
 import { Button, Input } from '@/components/ui';
+import { useDisplayCurrency } from '@/hooks/useDisplayCurrency';
 import { formatPrice } from '@/lib/utils';
 import type { Locale } from '@/lib/types';
 
@@ -37,20 +40,22 @@ export function CartSummary({
   onRemovePromo,
   labels,
 }: CartSummaryProps) {
+  const { currency } = useDisplayCurrency(locale);
+
   return (
     <aside className="top-20 space-y-4 rounded-[var(--radius-card)] border border-border-color bg-background-secondary p-5 md:sticky">
       <div className="space-y-2 text-sm">
         <div className="flex items-center justify-between">
           <span className="text-foreground-secondary">{labels.subtotal}</span>
-          <span>{formatPrice(subtotal, locale)}</span>
+          <span>{formatPrice(subtotal, locale, currency)}</span>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-foreground-secondary">{labels.discount}</span>
-          <span>{discount > 0 ? `- ${formatPrice(discount, locale)}` : formatPrice(0, locale)}</span>
+          <span>{discount > 0 ? `- ${formatPrice(discount, locale, currency)}` : formatPrice(0, locale, currency)}</span>
         </div>
         <div className="flex items-center justify-between border-t border-border-color pt-2 text-base font-semibold">
           <span>{labels.total}</span>
-          <span>{formatPrice(total, locale)}</span>
+          <span>{formatPrice(total, locale, currency)}</span>
         </div>
       </div>
 

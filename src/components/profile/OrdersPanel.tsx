@@ -1,4 +1,7 @@
+'use client';
+
 import { Badge } from '@/components/ui';
+import { useDisplayCurrency } from '@/hooks/useDisplayCurrency';
 import { cn } from '@/lib/utils';
 import { formatPrice } from '@/lib/utils';
 import type { Locale, Order, OrderStatus, Product } from '@/lib/types';
@@ -16,6 +19,8 @@ interface OrdersPanelProps {
 }
 
 export function OrdersPanel({ locale, orders, products, labels }: OrdersPanelProps) {
+  const { currency } = useDisplayCurrency(locale);
+
   if (orders.length === 0) {
     return (
       <section className="rounded-[var(--radius-card)] border border-border-color bg-background-secondary p-6 text-center text-foreground-secondary">
@@ -56,7 +61,7 @@ export function OrdersPanel({ locale, orders, products, labels }: OrdersPanelPro
               {resolvedItems.map(({ item, product, unitPrice }) => (
                 <div key={`${order.id}-${item.productId}-${item.variantKey ?? 'default'}`} className="flex items-center justify-between gap-3">
                   <span className="line-clamp-1">{product.name[locale]} x{item.quantity}</span>
-                  <span>{formatPrice(unitPrice * item.quantity, locale)}</span>
+                  <span>{formatPrice(unitPrice * item.quantity, locale, currency)}</span>
                 </div>
               ))}
             </div>

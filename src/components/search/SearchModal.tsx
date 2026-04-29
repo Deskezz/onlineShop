@@ -6,6 +6,7 @@ import { Search } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { useDebounce } from '@/hooks/useDebounce';
+import { useDisplayCurrency } from '@/hooks/useDisplayCurrency';
 import { useScrollLock } from '@/hooks/useScrollLock';
 import { products } from '@/data';
 import type { CategorySlug, Locale } from '@/lib/types';
@@ -174,6 +175,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
   const common = useTranslations('common');
   const tCategories = useTranslations('categories');
   const locale = useLocale() as Locale;
+  const { currency } = useDisplayCurrency(locale);
   const [query, setQuery] = React.useState('');
   const inputRef = React.useRef<HTMLInputElement>(null);
   const modalRef = React.useRef<HTMLDivElement>(null);
@@ -320,7 +322,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
                         <p className="truncate text-sm font-medium text-foreground">{product.name[locale]}</p>
                         <p className="text-xs text-foreground-secondary">{product.brand}</p>
                       </div>
-                      <span className="text-sm font-medium text-foreground">{formatPrice(product.price, locale)}</span>
+                      <span className="text-sm font-medium text-foreground">{formatPrice(product.price, locale, currency)}</span>
                     </Link>
                   </li>
                 ))}

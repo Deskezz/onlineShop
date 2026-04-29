@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { Heart } from 'lucide-react';
 import { useHydratedStore } from '@/hooks/useHydratedStore';
+import { useDisplayCurrency } from '@/hooks/useDisplayCurrency';
 import { useToast, Button, Badge, Rating, Skeleton } from '@/components/ui';
 import { useCartStore, useFavoritesStore } from '@/stores';
 import { cn, formatPrice } from '@/lib/utils';
@@ -31,6 +32,7 @@ interface ProductDetailsClientProps {
 
 export function ProductDetailsClient({ product, locale, labels }: ProductDetailsClientProps) {
   const { toast } = useToast();
+  const { currency } = useDisplayCurrency(locale);
   const [quantity, setQuantity] = useState(1);
   const variants = product.variants ?? [];
   const [selectedByType, setSelectedByType] = useState<Record<'color' | 'storage', string | undefined>>(
@@ -70,7 +72,7 @@ export function ProductDetailsClient({ product, locale, labels }: ProductDetails
         <p className="text-foreground-secondary">{product.description[locale]}</p>
       </div>
 
-      <p className="text-3xl font-semibold">{formatPrice(selectedPrice, locale)}</p>
+      <p className="text-3xl font-semibold">{formatPrice(selectedPrice, locale, currency)}</p>
       <Badge variant={product.inStock ? 'new' : 'outline'}>
         {product.inStock ? labels.inStock : labels.outOfStock}
       </Badge>

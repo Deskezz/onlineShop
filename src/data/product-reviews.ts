@@ -24,6 +24,17 @@ export const productReviews: Record<string, Review[]> = {
       },
       verified: true,
     },
+    {
+      id: 'r-iphone-17-pro-3',
+      author: 'Денис К.',
+      rating: 5,
+      date: '2026-03-19',
+      text: {
+        ru: 'Стабильная камера и хороший звук в видео. Понравилась работа батареи в поездке.',
+        en: 'Stable camera performance and great video audio. Battery life was solid during travel.',
+      },
+      verified: true,
+    },
   ],
   'xiaomi-17-ultra': [
     {
@@ -89,6 +100,17 @@ export const productReviews: Record<string, Review[]> = {
       },
       verified: true,
     },
+    {
+      id: 'r-macbook-neo-2',
+      author: 'Lisa T.',
+      rating: 4,
+      date: '2026-03-11',
+      text: {
+        ru: 'Очень быстрый для разработки и дизайна. Хотелось бы больше портов в базе.',
+        en: 'Very fast for development and design. Would prefer more ports in the base model.',
+      },
+      verified: true,
+    },
   ],
   'mac-mini': [
     {
@@ -125,6 +147,17 @@ export const productReviews: Record<string, Review[]> = {
       text: {
         ru: 'Очень приятный отклик клавиш, хорошо подходит для FPS игр.',
         en: 'Great key response and works really well for FPS gaming.',
+      },
+      verified: true,
+    },
+    {
+      id: 'r-rog-ace-hfx-keyboard-2',
+      author: 'Никита Ж.',
+      rating: 5,
+      date: '2026-03-21',
+      text: {
+        ru: 'Ход клавиш ровный, быстро привык. Для работы вечером шум умеренный.',
+        en: 'Key feel is consistent and easy to get used to. Noise level is moderate for evening work.',
       },
       verified: true,
     },

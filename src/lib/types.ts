@@ -1,6 +1,7 @@
 export type Locale = 'ru' | 'en';
 
 export type Theme = 'light' | 'dark';
+export type CurrencyCode = 'RUB' | 'USD' | 'EUR';
 
 export interface LocalizedString {
   ru: string;
