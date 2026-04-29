@@ -41,6 +41,7 @@
     "tablets": "Tablets",
     "laptops": "Laptops",
     "watches": "Smartwatches",
+    "keyboards": "Keyboards",
     "accessories": "Accessories",
     "desktops": "Desktops"
   },
@@ -134,8 +135,10 @@
   },
   "search": {
     "placeholder": "Search products...",
-    "hint": "Press Cmd+K to search",
+    "hint": "Press Cmd+K or Ctrl+K to search",
+    "emptyQuery": "Start typing product name, brand, or category",
     "noResults": "No results found for your query",
+    "viewAllCategory": "View all: {category}",
     "recentSearches": "Recent Searches"
   },
   "filters": {
@@ -171,3 +174,4 @@
     "limited": "Limited"
   }
 }
+

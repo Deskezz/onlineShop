@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { CategorySlug, FilterState, Product, SortOption } from '@/lib/types';
 import {
   filterProducts,
@@ -48,6 +48,16 @@ export function useCatalogState(products: Product[], initialCategory?: CategoryS
     });
     setPage(1);
   };
+
+  useEffect(() => {
+    setFilters({
+      categories: initialCategory ? [initialCategory] : [],
+      brands: [],
+      priceRange: defaultPriceRange,
+      minRating: 0,
+    });
+    setPage(1);
+  }, [defaultPriceRange, initialCategory]);
 
   return {
     sort,

@@ -39,6 +39,7 @@ export type CategorySlug =
   | 'tablets'
   | 'laptops'
   | 'watches'
+  | 'keyboards'
   | 'accessories'
   | 'desktops';
 

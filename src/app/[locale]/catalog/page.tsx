@@ -10,6 +10,7 @@ function parseCategory(value: string | undefined): CategorySlug | undefined {
     'tablets',
     'laptops',
     'watches',
+    'keyboards',
     'accessories',
     'desktops',
   ];

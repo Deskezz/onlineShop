@@ -7,6 +7,7 @@ import { Link, usePathname } from '@/i18n/navigation';
 import { useHydratedStore } from '@/hooks/useHydratedStore';
 import { useCartStore } from '@/stores';
 import { cn } from '@/lib/utils';
+import { SearchModal } from '@/components/search';
 import { Button } from '@/components/ui';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
@@ -22,6 +23,7 @@ export function Header() {
   const cartItems = useHydratedStore(useCartStore, (state) => state.items);
   const [isVisible, setIsVisible] = React.useState(true);
   const [lastScrollY, setLastScrollY] = React.useState(0);
+  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const cartCount = (cartItems ?? []).reduce((sum, item) => sum + item.quantity, 0);
 
   React.useEffect(() => {
@@ -43,6 +45,27 @@ export function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  React.useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        const target = event.target as HTMLElement | null;
+        const isFormField =
+          target instanceof HTMLInputElement ||
+          target instanceof HTMLTextAreaElement ||
+          target instanceof HTMLSelectElement ||
+          target?.isContentEditable;
+
+        if (!isFormField) {
+          event.preventDefault();
+          setIsSearchOpen(true);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
 
   return (
     <header
@@ -78,8 +101,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-1 sm:gap-2">
-          {/* Search Button (to trigger modal later) */}
-          <Button variant="ghost" size="icon" aria-label={t('search')} className="hidden sm:flex rounded-full">
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label={t('search')}
+            className="rounded-full"
+            onClick={() => setIsSearchOpen(true)}
+          >
             <Search className="h-5 w-5" />
           </Button>
 
@@ -106,6 +134,7 @@ export function Header() {
           </Link>
         </div>
       </div>
+      <SearchModal open={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
   );
 }

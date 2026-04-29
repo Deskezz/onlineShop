@@ -39,17 +39,27 @@ export const categories: Category[] = [
       en: 'Smartwatches for fitness, wellness, and notifications.',
     },
     image: '/assets/products/apple-watch-ultra-3.png',
-    productCount: 2,
+    productCount: 3,
+  },
+  {
+    slug: 'keyboards',
+    name: { ru: 'Клавиатуры', en: 'Keyboards' },
+    description: {
+      ru: 'Игровые и рабочие клавиатуры с разными типами переключателей.',
+      en: 'Gaming and productivity keyboards with different switch types.',
+    },
+    image: '/assets/products/rog_ace_hfx_keyboard.png',
+    productCount: 3,
   },
   {
     slug: 'accessories',
     name: { ru: 'Аксессуары', en: 'Accessories' },
     description: {
-      ru: 'Клавиатуры, зарядки и полезные дополнения.',
-      en: 'Keyboards, chargers, and essential add-ons.',
+      ru: 'Зарядки, геймпады, стилусы и полезные дополнения.',
+      en: 'Chargers, gamepads, styluses, and essential add-ons.',
     },
     image: '/assets/products/cuktech-140w-gan-charger-4-ports.jpg',
-    productCount: 8,
+    productCount: 5,
   },
   {
     slug: 'desktops',
