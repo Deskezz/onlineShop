@@ -25,8 +25,24 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: 'TechHaven',
+  metadataBase: new URL('https://techhaven-demo.local'),
+  title: {
+    default: 'TechHaven',
+    template: '%s | TechHaven',
+  },
   description: 'TechHaven Electronics Store Demo',
+  openGraph: {
+    title: 'TechHaven',
+    description: 'TechHaven Electronics Store Demo',
+    type: 'website',
+    images: ['/assets/products/IPhone-17-Pro.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TechHaven',
+    description: 'TechHaven Electronics Store Demo',
+    images: ['/assets/products/IPhone-17-Pro.jpg'],
+  },
 };
 
 export function generateStaticParams() {

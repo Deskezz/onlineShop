@@ -36,7 +36,7 @@ export function MobileMenu() {
         size="icon"
         className="h-10 w-10 rounded-full border-border-color bg-background-secondary md:hidden"
         onClick={() => setIsOpen(true)}
-        aria-label="Open menu"
+        aria-label={t('openMenu')}
       >
         <Menu className="h-6 w-6" />
       </Button>
@@ -81,7 +81,7 @@ export function MobileMenu() {
                       key={link.href}
                       href={link.href}
                       className={cn(
-                        'block rounded-[var(--radius-button)] border px-4 py-3 text-base font-medium transition-colors',
+                        'block rounded-[var(--radius-button)] border px-4 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent',
                         {
                           'border-foreground/20 bg-background text-foreground': isActive,
                           'border-transparent bg-transparent text-foreground hover:border-border-color hover:bg-background hover:text-foreground':

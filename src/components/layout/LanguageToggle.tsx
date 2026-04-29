@@ -1,10 +1,12 @@
 'use client';
 
 import { useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { Button } from '@/components/ui';
 
 export function LanguageToggle() {
+  const t = useTranslations('common');
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -21,7 +23,7 @@ export function LanguageToggle() {
       size="icon"
       className="w-9 h-9 font-semibold uppercase text-sm rounded-full"
       onClick={toggleLanguage}
-      aria-label={`Switch to ${locale === 'ru' ? 'English' : 'Russian'}`}
+      aria-label={t('language')}
     >
       {locale === 'ru' ? 'en' : 'ru'}
     </Button>
