@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TechHaven
 
-## Getting Started
+> Демо-проект современного онлайн-магазина электроники для портфолио.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Zustand](https://img.shields.io/badge/State-Zustand-orange)](https://zustand-demo.pmnd.rs/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## О проекте
+
+**TechHaven** — это многостраничный e-commerce демо-сайт с реалистичным пользовательским потоком:
+
+- просмотр каталога и карточек товаров;
+- добавление в корзину и избранное;
+- checkout в 3 шага;
+- профиль с историей заказов;
+- мультиязычность (RU/EN), темы (light/dark), поиск по товарам.
+
+Проект создан как **демонстрация уровня Middle/Senior frontend-разработки**: архитектура, типобезопасность, UX-детали, стабильная сборка и аккуратная работа с состоянием.
+
+---
+
+## Что реализовано
+
+### Core функционал
+
+- Главная страница с витриной и категориями
+- Каталог: фильтры, сортировка, пагинация, мобильный drawer
+- Карточка товара: варианты, количество, отзывы, похожие товары
+- Корзина: изменение количества, промокод, summary
+- Checkout: wizard + валидация форм
+- Success page после оформления
+- Профиль: overview, заказы, избранное
+
+### UX и интерфейс
+
+- Единая дизайн-система компонентов
+- Адаптивность (desktop/tablet/mobile)
+- Поиск с модалкой, debounce и горячими клавишами (`Cmd/Ctrl + K`)
+- Корректное закрытие оверлеев, блокировка скролла
+- Пустые состояния и визуальный фидбек
+
+### Локализация и валюты
+
+- `RU / EN` через `next-intl`
+- Переключение валют `RUB / USD / EUR`
+- Корректная конвертация цен (а не простая смена символа валюты)
+
+### Данные и состояние
+
+- Нормализованные мок-данные (товары, отзывы, заказы)
+- Клиентские сторы на `Zustand + persist`
+- Гидратация persist-стейтов через безопасный слой
+
+---
+
+## Технологический стек
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript (`strict`)
+- **Styles:** Tailwind CSS v4, CVA, tailwind-merge
+- **State:** Zustand (`persist`)
+- **Forms:** React Hook Form + Zod
+- **i18n:** next-intl
+- **Icons:** Lucide React
+- **Animations:** Framer Motion (микро-анимации)
+
+---
+
+## Архитектурные акценты
+
+- Разделение server/client компонентов без смешивания ответственности
+- Типобезопасные контракты данных
+- Переиспользуемые UI-компоненты и композиция
+- Нормализация данных корзины/избранного
+- Предсказуемая структура проекта для масштабирования
+
+---
+
+## Структура проекта
+
+```txt
+src/
+  app/[locale]/            # роутинг и страницы (App Router + i18n)
+  components/              # ui, layout, catalog, product, cart, checkout, profile, search
+  data/                    # мок-данные: товары, отзывы, заказы, категории
+  hooks/                   # custom hooks (debounce, media, scroll-lock, currency)
+  lib/                     # типы, утилиты, константы
+  stores/                  # Zustand stores
+messages/                  # локализации RU/EN
+public/assets/products/    # локальные изображения товаров
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Локальный запуск
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Открыть в браузере: `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+Сборка production:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Что показывает этот проект работодателю
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- умение строить **законченный пользовательский продукт**, а не только отдельные экраны;
+- владение современным стеком Next.js/TypeScript;
+- аккуратная работа с архитектурой, состоянием, типами и UX;
+- способность доводить проект до стабильного состояния и полировки.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Контакты
+
+- Telegram: [@deskezz](https://t.me/deskezz)
+- GitHub: [Deskezz](https://github.com/Deskezz)
